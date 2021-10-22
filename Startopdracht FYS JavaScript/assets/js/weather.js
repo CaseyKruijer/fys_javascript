@@ -14,21 +14,24 @@ window.addEventListener('load',  ()  => {
 
     //event changer for the img of the weather
     document.querySelector("#WeatherType").addEventListener("change", event => {
-        if (document.querySelector("#type").classList[0] === "sun"){
-            document.querySelector("#type").classList.remove("sun");
-            document.querySelector("main").classList.remove("sun_bg");
-        }else if (document.querySelector("#type").classList[0] === "cloud"){
-            document.querySelector("#type").classList.remove("cloud");
-            document.querySelector("main").classList.remove("cloud_bg");
-        }else if (document.querySelector("#type").classList[0] === "rain"){
-            document.querySelector("#type").classList.remove("rain");
-            document.querySelector("main").classList.remove("rain_bg");
-        }else if (document.querySelector("#type").classList[0] === "snow"){
-            document.querySelector("#type").classList.remove("snow");
-            document.querySelector("main").classList.remove("snow_bg");
+        switch (event.target.value){
+            case "sun":
+                document.getElementById("WeatherTypes").src = "assets/img/sun_weather_icon.png";
+                document.getElementsByTagName("main")[0].style.cssText = "background-color: cornsilk; color: black;";
+                break;
+            case "cloud":
+                document.getElementById("WeatherTypes").src = "assets/img/cloud_weather_icon.png";
+                document.getElementsByTagName("main")[0].style.cssText = "background-color: lightgray; color: black;";
+                break;
+            case "rain":
+                document.getElementById("WeatherTypes").src = "assets/img/rain_weather_icon.png";
+                document.getElementsByTagName("main")[0].style.cssText = "background-color: lightblue; color: black;";
+                break;
+            case "snow":
+                document.getElementById("WeatherTypes").src = "assets/img/snowy_weather_icon.png";
+                document.getElementsByTagName("main")[0].style.cssText = "background-color: darkgray; color: white;";
+                break;
         }
-        document.querySelector("#type").classList.add(event.target.value);
-        document.querySelector("main").classList.add(event.target.value + "_bg");
     });
 
     /**

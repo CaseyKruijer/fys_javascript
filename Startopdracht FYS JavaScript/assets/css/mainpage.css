@@ -109,53 +109,8 @@ footer {
     background-color: whitesmoke;
 }
 
-.thermometer{
+.box{
     height: 200px;
-}
-
-.sun_bg{
-    background-color: cornsilk;
-}
-
-.sun{
-    height: 150px;
-    width: 150px;
-    background-image: url("../img/sun_weather_icon.png");
-    background-size: cover;
-}
-
-.rain_bg{
-    background-color: lightgray;
-}
-
-.rain{
-    height: 150px;
-    width: 150px;
-    background-image: url("../img/rain_weather_icon.png");
-    background-size: cover;
-}
-
-.cloud_bg{
-    background-color: lightblue;
-}
-
-.cloud{
-    height: 150px;
-    width: 150px;
-    background-image: url("../img/cloud_weather_icon.png");
-    background-size: cover;
-}
-
-.snow_bg{
-    background-color: darkgray;
-    color: #ffffff;
-}
-
-.snow{
-    height: 150px;
-    width: 150px;
-    background-image: url("../img/snowy_weather_icon.png");
-    background-size: cover;
 }
 /* Responsive lay-out when the screen is less than 640px wide: make the two columns stack on top of each other
 instead of next to each other */
