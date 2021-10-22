@@ -1,0 +1,168 @@
+/* Body style */
+/* body serves as flexbox container */
+body {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+/* h1 style */
+h1 {
+    font-size: xxx-large;
+    padding: 20px;
+}
+
+/* Anchor style */
+a {
+    color: lightcoral;
+}
+
+/* Paragraph style */
+p {
+    font-size: large;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    /* Set properties for flexbox */
+    flex-basis: 100%; /* Width of header is 100% of the browser-width */
+    flex-direction: row; /* Standard flex-direction is 'row'. If screen width < 700px it becomes 'column' (see @media query) */
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    /* Set properties for background image */
+    background-image: url("../../assets/img/top_banner.png");
+    background-size: cover;
+
+    /* Set properties for text, color, etc. */
+    text-align: center;
+    background-color: transparent;
+    color: purple;
+    padding: 0;
+}
+
+nav {
+    /* Width of navigation bar is 100% of the browser-width */
+    flex-basis: 100%;
+    /* Standard flex-direction is 'row'. If screen is less than 700px width the flex-direction becomes 'column' (see @media query) */
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    background-color: black;
+    /* top, right, bottom, left */
+    padding: 20px 10px 20px 0;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: gold;
+    color: black;
+}
+
+aside {
+    /* Width of side column is 20% of the browser-width */
+    flex-basis: 30%;
+    /* Standard flex-direction is 'row'. If screen is less than 700px width the flex-direction becomes 'column' (see @media) */
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    background-color: darkslategray;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    /* Width of main content column is 80% of the browser-width */
+    flex-basis: 70%;
+    /* Standard flex-direction is 'row'. If screen is less than 700px width the flex-direction becomes 'column' (see @media) */
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    background-color: cornsilk;
+    padding: 20px;
+}
+
+footer {
+    /* Width of footer is 100% of the browser-width */
+    flex-basis: 100%;
+    /* Standard flex-direction is 'row'. If screen is less than 700px width the flex-direction becomes 'column' (see @media) */
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    padding: 10px;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.thermometer{
+    height: 200px;
+}
+
+.sun_bg{
+    background-color: cornsilk;
+}
+
+.sun{
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/sun_weather_icon.png");
+    background-size: cover;
+}
+
+.rain_bg{
+    background-color: lightgray;
+}
+
+.rain{
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/rain_weather_icon.png");
+    background-size: cover;
+}
+
+.cloud_bg{
+    background-color: lightblue;
+}
+
+.cloud{
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/cloud_weather_icon.png");
+    background-size: cover;
+}
+
+.snow_bg{
+    background-color: darkgray;
+    color: #ffffff;
+}
+
+.snow{
+    height: 150px;
+    width: 150px;
+    background-image: url("../img/snowy_weather_icon.png");
+    background-size: cover;
+}
+/* Responsive lay-out when the screen is less than 640px wide: make the two columns stack on top of each other
+instead of next to each other */
+/* Media query */
+@media screen and (max-width: 640px) {
+    .nav, aside, .main {
+        flex-basis: 100%;
+        flex-direction: column;
+    }
+}

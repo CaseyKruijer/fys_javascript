@@ -1,0 +1,43 @@
+/* UL en LI styles voor alle tags binnen weather_form  */
+.weather_form ul {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+.weather_form li {
+    padding: 12px;
+    margin: 15px 15px 15px 15px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    color: #eeeeee;
+}
+
+/* Lijn boven en onder de LI */
+.weather_form li:first-child, .weather_form li:last-child {
+    border-bottom: 1px solid #777;
+}
+
+.weather_form h2 {
+    margin: 0;
+    display: inline;
+}
+
+.weather_form label {
+    width: 150px;
+    margin-top: 3px;
+    display: inline-block;
+    float: left;
+    padding: 3px;
+}
+
+.weather_form input {
+    height: 20px;
+    width: 220px;
+    padding: 5px 8px;
+}
+
+.weather_form button {
+    margin-left: 156px;
+}
