@@ -9,11 +9,11 @@
           rel="stylesheet">
     <link rel="stylesheet" href="assets/css/mainpage.css">
     <link rel="stylesheet" media="screen" href="assets/css/form.css">
-    <script type="text/ecmascript" src="assets/js/weather.js"></script>
+    <script src="assets/js/weather.js"></script>
 </head>
 <body>
 <header>
-    <h1>Wat wordt het weer vandaag <span class="nameHeader"></span></h1>
+    <h1>Wat wordt het weer vandaag <span class="name"></span></h1>
 </header>
 <nav>
     <a href="index.html">Home</a>
@@ -50,7 +50,7 @@
                 <button type="button" class="updateWebsite">Update website via formulier</button>
             </li>
             <li>
-                <button type="button" class="UpdateViaapi">Update website via API</button>
+                <button type="button" onclick="haalWeerOp()" class="UpdateViaapi">Update website via API</button>
             </li>
         </ul>
     </div>
