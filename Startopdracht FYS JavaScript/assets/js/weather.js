@@ -16,20 +16,20 @@ window.addEventListener('load',  ()  => {
     document.querySelector("#WeatherType").addEventListener("change", event => {
         switch (event.target.value){
             case "sun":
-                document.getElementById("WeatherTypes").src = "assets/img/sun_weather_icon.png";
-                document.getElementsByTagName("main")[0].style.cssText = "background-color: cornsilk; color: black;";
+                document.querySelector("#WeatherTypes").src = "assets/img/sun_weather_icon.png";
+                document.querySelector("main")[0].style.cssText = "background-color: cornsilk; color: black;";
                 break;
             case "cloud":
-                document.getElementById("WeatherTypes").src = "assets/img/cloud_weather_icon.png";
-                document.getElementsByTagName("main")[0].style.cssText = "background-color: lightgray; color: black;";
+                document.querySelector("#WeatherTypes").src = "assets/img/cloud_weather_icon.png";
+                document.querySelector("main")[0].style.cssText = "background-color: lightgray; color: black;";
                 break;
             case "rain":
-                document.getElementById("WeatherTypes").src = "assets/img/rain_weather_icon.png";
-                document.getElementsByTagName("main")[0].style.cssText = "background-color: lightblue; color: black;";
+                document.querySelector("#WeatherTypes").src = "assets/img/rain_weather_icon.png";
+                document.querySelector("main")[0].style.cssText = "background-color: lightblue; color: black;";
                 break;
             case "snow":
-                document.getElementById("WeatherTypes").src = "assets/img/snowy_weather_icon.png";
-                document.getElementsByTagName("main")[0].style.cssText = "background-color: darkgray; color: white;";
+                document.querySelector("#WeatherTypes").src = "assets/img/snowy_weather_icon.png";
+                document.querySelector("main")[0].style.cssText = "background-color: darkgray; color: white;";
                 break;
         }
     });
@@ -44,7 +44,7 @@ window.addEventListener('load',  ()  => {
 function haalWeerOp() {
 
     if (document.getElementsByClassName("name")[0].innerHTML === "") {
-        const url = "http://weerlive.nl/api/json-data-10min.php?key=ebe68ec15e&locatie=Amsterdam";
+        const url = "https://data.meteoserver.nl/api/liveweer.php?locatie=Amsterdam&key=ae99dc2ffd";
         fetch(url)
             .then((response) => response.json())
             //Doe onderstaande als alle informatie binnen is. De opgehaalde informatie wordt in een variabele data gezet.
@@ -64,14 +64,13 @@ function haalWeerOp() {
                 document.querySelectorAll(".name")[1].innerHTML = stad;
                 document.querySelector("#temp").innerHTML = temp + " graden";
                 document.querySelector("#verw").innerHTML = verw;
-
             })
             .catch(function (error) {
                 console.log(error);
             });
     }else{
-        const url = "http://weerlive.nl/api/json-data-10min.php?key=ebe68ec15e&locatie="
-            + document.getElementsByClassName("name")[0].innerHTML;
+        const url = "https://data.meteoserver.nl/api/liveweer.php?locatie="
+            + document.getElementsByClassName("name")[0].innerHTML + "&key=ae99dc2ffd";
         fetch(url)
             .then((response) => response.json())
             //Doe onderstaande als alle informatie binnen is. De opgehaalde informatie wordt in een variabele data gezet.
